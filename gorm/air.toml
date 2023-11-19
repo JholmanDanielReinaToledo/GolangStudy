@@ -1,0 +1,13 @@
+# air.toml
+
+# Dirección del archivo principal de tu aplicación Go
+[build]
+  bin = "main.go"
+
+# Configuración de reinicio automático después de cambios
+[restart]
+  exclude = [
+    "vendor",
+    "testdata"
+  ]
+  delay = 1000 # milisegundos (opcional, especifica el tiempo de espera antes de reiniciar)
