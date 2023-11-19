@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gorm/controllers"
 	"gorm/db"
+	"gorm/reports"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,6 +20,8 @@ func main() {
 	router.GET("/posts/:id", controllers.FindPost)
 	router.PATCH("/posts/:id", controllers.UpdatePost)
 	router.DELETE("/posts/:id", controllers.DeletePost)
+
+	router.POST("/posts/report", reports.GenerateXlsx)
 
 	fmt.Printf("Server Running in port %d \n", Port)
 	router.Run("localhost:8080")
