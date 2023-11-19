@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"gorm/controllers"
 	"gorm/db"
 
@@ -8,6 +9,7 @@ import (
 )
 
 func main() {
+	Port := 8000
 	router := gin.Default()
 
 	db.ConnectDatabase()
@@ -18,5 +20,6 @@ func main() {
 	router.PATCH("/posts/:id", controllers.UpdatePost)
 	router.DELETE("/posts/:id", controllers.DeletePost)
 
+	fmt.Printf("Server Running in port %d \n", Port)
 	router.Run("localhost:8080")
 }
