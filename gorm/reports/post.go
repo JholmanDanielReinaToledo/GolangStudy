@@ -44,7 +44,9 @@ func GenerateXlsxGeneric(nameSheet string, records interface{}, headers []string
 
 	f.SetActiveSheet(index)
 
-	name := nameSheet + ".xlsx"
+	name := "/app/golang/" + nameSheet + ".xlsx"
+
+	fmt.Println(name)
 
 	if err := f.SaveAs(name); err != nil {
 		fmt.Println(err)

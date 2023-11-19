@@ -1,4 +1,4 @@
-package controllers
+package reports
 
 import (
 	"gorm/db"
